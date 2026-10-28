@@ -27,7 +27,7 @@
 - [x] Oyuncu hareketi, kamera takibi
 - [x] Otomatik nişanlı 1 silah (tabanca), mermi pooling
 - [x] 2 zombi tipi (yürüyen, koşucu) `.tres` olarak
-- [ ] Zombi hareketi (navigasyon / akış alanı)
+- [x] Zombi hareketi (akış alanı, `scripts/core/flow_field.gd`)
 - [ ] 1 harita: ev + bahçe, zombi giriş noktaları (placeholder renkli şekiller)
 - [ ] Sonsuz dalga, veriden ölçekleme
 - [ ] HUD: can, dalga, mermi

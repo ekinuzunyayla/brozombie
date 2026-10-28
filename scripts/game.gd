@@ -3,6 +3,7 @@ extends Node2D
 
 ## Run'ın tek rastgelelik kaynağı. Seed ileride run kaydına girer.
 var rng := RandomNumberGenerator.new()
+var _flow := FlowFieldSystem.new()
 
 @onready var _map: GameMap = %Map
 @onready var _player: Player = %Player
@@ -21,11 +22,16 @@ func _ready() -> void:
 	_player.weapon.pool = _bullet_pool
 	_player.weapon.rng = rng
 
+	_flow.name = "FlowField"
+	add_child(_flow)
+	_flow.setup(_map, _player)
+
 	_spawner.pool = _zombie_pool
 	_spawner.rng = rng
 	_spawner.spawn_points = _map.get_zombie_spawn_points()
 	_spawner.target = _player
 	_spawner.target_health = _player.health
+	_spawner.flow = _flow
 
 
 func _fit_camera_to_map() -> void:

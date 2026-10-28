@@ -10,6 +10,8 @@ const GROUP: StringName = &"zombies"
 
 var data: ZombieData
 var target: Node2D
+## Varsa yön buradan gelir (duvarların etrafından dolaşır), yoksa hedefe düz yürür.
+var flow: FlowFieldSystem
 var _target_health: HealthComponent
 var _attack_cooldown: float = 0.0
 var _flash: Tween
@@ -24,9 +26,10 @@ func _ready() -> void:
 	health.died.connect(_on_died)
 
 
-func setup(p_data: ZombieData, p_target: Node2D, target_health: HealthComponent, at: Vector2) -> void:
+func setup(p_data: ZombieData, p_target: Node2D, target_health: HealthComponent, at: Vector2, p_flow: FlowFieldSystem = null) -> void:
 	data = p_data
 	target = p_target
+	flow = p_flow
 	_target_health = target_health
 	global_position = at
 	velocity = Vector2.ZERO
@@ -53,7 +56,8 @@ func _physics_process(delta: float) -> void:
 	if not is_alive() or target == null:
 		return
 	var to_target: Vector2 = target.global_position - global_position
-	velocity = to_target.normalized() * data.speed
+	var direction: Vector2 = flow.get_direction(global_position) if flow else to_target.normalized()
+	velocity = direction * data.speed
 	move_and_slide()
 	_attack_cooldown -= delta
 	if _attack_cooldown <= 0.0 and to_target.length() <= data.attack_range and _target_health:

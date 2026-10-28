@@ -13,6 +13,7 @@ var rng: RandomNumberGenerator
 var spawn_points: Array[Vector2] = []
 var target: Node2D
 var target_health: HealthComponent
+var flow: FlowFieldSystem
 
 var _timer: float = 0.0
 var _alive: int = 0
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	var zombie: Zombie = pool.acquire()
 	var data: ZombieData = zombie_types[rng.randi_range(0, zombie_types.size() - 1)]
 	var point: Vector2 = spawn_points[rng.randi_range(0, spawn_points.size() - 1)]
-	zombie.setup(data, target, target_health, point)
+	zombie.setup(data, target, target_health, point, flow)
 	if not zombie.died.is_connected(_on_zombie_died):
 		zombie.died.connect(_on_zombie_died)
 	_alive += 1
