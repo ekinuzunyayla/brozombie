@@ -5,6 +5,15 @@ extends Node2D
 @onready var ground: TileMapLayer = %Ground
 @onready var walls: TileMapLayer = %Walls
 @onready var player_spawn: Marker2D = %PlayerSpawn
+@onready var _zombie_spawns: Node2D = %ZombieSpawns
+
+
+## Zombi giriş noktaları (dünya koordinatı).
+func get_zombie_spawn_points() -> Array[Vector2]:
+	var points: Array[Vector2] = []
+	for marker in _zombie_spawns.get_children():
+		points.append((marker as Node2D).global_position)
+	return points
 
 
 ## Haritanın dünya koordinatlarındaki sınırı (kamera sınırları için).

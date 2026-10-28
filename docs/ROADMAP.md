@@ -25,13 +25,13 @@
 ## v0.1 Savunma çekirdeği
 - [x] Stat + Modifier sistemi (`scripts/core/`) + testleri
 - [x] Oyuncu hareketi, kamera takibi
-- [ ] Otomatik nişanlı 1 silah (tabanca), mermi pooling
-- [ ] 2 zombi tipi (yürüyen, koşucu) `.tres` olarak
+- [x] Otomatik nişanlı 1 silah (tabanca), mermi pooling
+- [x] 2 zombi tipi (yürüyen, koşucu) `.tres` olarak
 - [ ] Zombi hareketi (navigasyon / akış alanı)
 - [ ] 1 harita: ev + bahçe, zombi giriş noktaları (placeholder renkli şekiller)
 - [ ] Sonsuz dalga, veriden ölçekleme
 - [ ] HUD: can, dalga, mermi
-- [ ] Ölüm → yeniden başlat
+- [x] Ölüm → yeniden başlat (geçici: sahne yeniden yüklenir)
 - [x] 🔒 Performans bütçesi: iPhone 11'de 60 FPS, ekranda aynı anda ~150 zombi
 - [ ] Performans testi: iPhone 11'de 150 zombi ile 60 FPS
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/projectiles/bullet.tscn" id="1_a40w6"]
+[ext_resource type="Script" path="res://scripts/resources/weapon_data.gd" id="2_o8lbu"]
+
+[resource]
+script = ExtResource("2_o8lbu")
+id = &"pistol"
+name_key = "WEAPON_PISTOL_NAME"
+attack_speed = 2.5
+max_range = 650.0
+spread_degrees = 4.0
+projectile_scene = ExtResource("1_a40w6")

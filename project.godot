@@ -92,6 +92,7 @@ locale/translations=PackedStringArray("res://localization/strings.en.translation
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="zombies"
+2d_physics/layer_4="player_projectiles"
 
 [physics]
 

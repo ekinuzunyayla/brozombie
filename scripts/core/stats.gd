@@ -34,7 +34,15 @@ func get_base(stat: StringName) -> float:
 func get_value(stat: StringName) -> float:
 	if _cache.has(stat):
 		return _cache[stat]
-	var flat: float = get_base(stat)
+	var value: float = apply(stat, get_base(stat))
+	_cache[stat] = value
+	return value
+
+
+## Bu stat'ın modifier'larını kendi tabanı yerine verilen tabana uygular.
+## Ör. silahın hasarı `apply(StatIds.DAMAGE, weapon_damage)` ile oyuncunun hasar kartlarından etkilenir.
+func apply(stat: StringName, base: float) -> float:
+	var flat: float = base
 	var percent: float = 0.0
 	for entry in _entries:
 		if entry.modifier.stat != stat:
@@ -44,9 +52,7 @@ func get_value(stat: StringName) -> float:
 				flat += entry.modifier.value
 			StatModifier.Type.PERCENT:
 				percent += entry.modifier.value
-	var value: float = flat * maxf(0.0, 1.0 + percent / 100.0)
-	_cache[stat] = value
-	return value
+	return flat * maxf(0.0, 1.0 + percent / 100.0)
 
 
 func add_modifier(modifier: StatModifier, source: StringName = &"") -> void:

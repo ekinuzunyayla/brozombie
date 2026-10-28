@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZombieData" format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/zombies/zombie.tscn" id="1_h2jo5"]
+[ext_resource type="Script" path="res://scripts/resources/zombie_data.gd" id="2_fqyo7"]
+
+[resource]
+script = ExtResource("2_fqyo7")
+id = &"runner"
+name_key = "ZOMBIE_RUNNER_NAME"
+max_health = 15.0
+speed = 150.0
+damage = 6.0
+attack_range = 48.0
+attack_interval = 0.8
+scene = ExtResource("1_h2jo5")
+radius = 20.0
+color = Color(0.7529412, 0.3254902, 0.22745098, 1)

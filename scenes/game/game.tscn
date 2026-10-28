@@ -1,28 +1,50 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_87uf6"]
-[ext_resource type="PackedScene" path="res://scenes/maps/house.tscn" id="2_2a8rs"]
-[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="3_4j704"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="4_kp23o"]
-[ext_resource type="Script" path="res://scripts/entities/player.gd" id="5_5jirj"]
-[ext_resource type="Resource" path="res://data/characters/survivor.tres" id="6_vaxfo"]
-[ext_resource type="PackedScene" path="res://scenes/ui/touch_controls.tscn" id="7_ftsea"]
-[ext_resource type="Script" path="res://scripts/input/touch_controls.gd" id="8_otnwt"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_otnwt"]
+[ext_resource type="PackedScene" path="res://scenes/maps/house.tscn" id="2_3xj4h"]
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="3_5v6r0"]
+[ext_resource type="Script" path="res://scripts/systems/node_pool.gd" id="4_uyinl"]
+[ext_resource type="PackedScene" path="res://scenes/zombies/zombie.tscn" id="5_10c2w"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="6_pg2xm"]
+[ext_resource type="Script" path="res://scripts/entities/player.gd" id="7_gc57s"]
+[ext_resource type="Resource" path="res://data/characters/survivor.tres" id="8_8b66f"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/bullet.tscn" id="9_3jaai"]
+[ext_resource type="Script" path="res://scripts/systems/debug_zombie_spawner.gd" id="10_1iff4"]
+[ext_resource type="Script" path="res://scripts/resources/zombie_data.gd" id="11_4vuph"]
+[ext_resource type="Resource" path="res://data/zombies/walker.tres" id="12_wdnak"]
+[ext_resource type="Resource" path="res://data/zombies/runner.tres" id="13_h48ew"]
+[ext_resource type="PackedScene" path="res://scenes/ui/touch_controls.tscn" id="14_fty5b"]
+[ext_resource type="Script" path="res://scripts/input/touch_controls.gd" id="15_l2dhg"]
 
-[node name="Game" type="Node2D" unique_id=628300277]
-script = ExtResource("1_87uf6")
+[node name="Game" type="Node2D" unique_id=1377519965]
+script = ExtResource("1_otnwt")
 
-[node name="Map" type="Node2D" parent="." unique_id=734698365 instance=ExtResource("2_2a8rs")]
+[node name="Map" type="Node2D" parent="." unique_id=1074736666 instance=ExtResource("2_3xj4h")]
 unique_name_in_owner = true
-script = ExtResource("3_4j704")
+script = ExtResource("3_5v6r0")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=144061812 instance=ExtResource("4_kp23o")]
+[node name="ZombiePool" type="Node2D" parent="." unique_id=166873899]
+unique_name_in_owner = true
+script = ExtResource("4_uyinl")
+scene = ExtResource("5_10c2w")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=930561773 instance=ExtResource("6_pg2xm")]
 unique_name_in_owner = true
 collision_layer = 2
 motion_mode = 1
-script = ExtResource("5_5jirj")
-character = ExtResource("6_vaxfo")
+script = ExtResource("7_gc57s")
+character = ExtResource("8_8b66f")
 
-[node name="TouchControls" type="CanvasLayer" parent="." unique_id=564727493 instance=ExtResource("7_ftsea")]
+[node name="BulletPool" type="Node2D" parent="." unique_id=17245656]
+unique_name_in_owner = true
+script = ExtResource("4_uyinl")
+scene = ExtResource("9_3jaai")
+
+[node name="ZombieSpawner" type="Node" parent="." unique_id=1190209843]
+unique_name_in_owner = true
+script = ExtResource("10_1iff4")
+zombie_types = Array[ExtResource("11_4vuph")]([ExtResource("12_wdnak"), ExtResource("13_h48ew")])
+
+[node name="TouchControls" type="CanvasLayer" parent="." unique_id=564727493 instance=ExtResource("14_fty5b")]
 layer = 10
-script = ExtResource("8_otnwt")
+script = ExtResource("15_l2dhg")

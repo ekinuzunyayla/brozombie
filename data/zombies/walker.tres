@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ZombieData" format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/zombies/zombie.tscn" id="1_pyj3y"]
+[ext_resource type="Script" path="res://scripts/resources/zombie_data.gd" id="2_2g1tk"]
+
+[resource]
+script = ExtResource("2_2g1tk")
+id = &"walker"
+name_key = "ZOMBIE_WALKER_NAME"
+max_health = 30.0
+speed = 70.0
+attack_range = 52.0
+scene = ExtResource("1_pyj3y")
+color = Color(0.6039216, 0.6509804, 0.49411765, 1)
