@@ -17,7 +17,7 @@ macOS'ta `timeout` komutu yok, onun yerine `--quit-after` kullan.
 - Projeyi içe aktar ve tüm scriptleri parse et: `$GODOT --headless --path . --import`
 - Testleri çalıştır (GUT, `tests/` altındaki `test_*.gd`): `$GODOT --headless --path . -s res://addons/gut/gut_cmdln.gd`. Başarısız test olursa exit code 1 döner. Tek dosya için sonuna `-gtest=res://tests/unit/test_x.gd` ekle.
 - Tek script kontrolü: `$GODOT --headless --path . --check-only --script res://path/to/file.gd`
-- Sahneyi kısa süre çalıştır: `$GODOT --headless --path . res://scenes/maps/house.tscn --quit-after 300`
+- Sahneyi kısa süre çalıştır: `$GODOT --headless --path . res://scenes/game/game.tscn --quit-after 300`
 - Ekran görüntüsü al (headless olmadan): `$GODOT --path . --write-movie <scratchpad>/f.png --quit-after 5`. Son kareyi oku.
 - Godot editörü açıksa Fennara MCP araçlarını tercih et: script diagnostics, `screenshot_scene`, oyun içi davranış için `runtime_session`/`runtime_script`.
 - Export: `$GODOT --headless --path . --export-debug "Android" build/android/BroZombie.apk`. Preset adları: `Android`, `iOS`, `macOS`, `Windows`. `build/` içinde `.gdignore` olmalı, yoksa Godot build çıktılarını tarar ve import dakikalarca sürer.
@@ -90,6 +90,8 @@ scripts/core/  saf oyun mantığı (run state, stats, waves, economy, cards)
 scripts/resources/   veri sınıfları (WeaponData, ZombieData, CardData, BuildableData, StatModifier ...)
 scripts/components/  HealthComponent, HitboxComponent, HurtboxComponent, StatsComponent
 scripts/systems/     sahneye bağlı yöneticiler (WaveSpawner, DropManager, BuildManager, pooling)
+scripts/entities/    oyuncu, zombi, mermi gibi varlıkların scriptleri
+scripts/maps/        GameMap ve harita yardımcıları
 scripts/input/       MoveInput, sanal joystick
 scripts/platform/    Monetization, Platform arayüzleri ve mock'ları
 scripts/ui/          görünüm scriptleri

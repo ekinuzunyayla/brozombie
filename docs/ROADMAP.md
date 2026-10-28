@@ -24,7 +24,7 @@
 
 ## v0.1 Savunma çekirdeği
 - [x] Stat + Modifier sistemi (`scripts/core/`) + testleri
-- [ ] Oyuncu hareketi, kamera takibi
+- [x] Oyuncu hareketi, kamera takibi
 - [ ] Otomatik nişanlı 1 silah (tabanca), mermi pooling
 - [ ] 2 zombi tipi (yürüyen, koşucu) `.tres` olarak
 - [ ] Zombi hareketi (navigasyon / akış alanı)

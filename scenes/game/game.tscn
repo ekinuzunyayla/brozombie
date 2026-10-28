@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_87uf6"]
+[ext_resource type="PackedScene" path="res://scenes/maps/house.tscn" id="2_2a8rs"]
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="3_4j704"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="4_kp23o"]
+[ext_resource type="Script" path="res://scripts/entities/player.gd" id="5_5jirj"]
+[ext_resource type="Resource" path="res://data/characters/survivor.tres" id="6_vaxfo"]
+[ext_resource type="PackedScene" path="res://scenes/ui/touch_controls.tscn" id="7_ftsea"]
+[ext_resource type="Script" path="res://scripts/input/touch_controls.gd" id="8_otnwt"]
+
+[node name="Game" type="Node2D" unique_id=628300277]
+script = ExtResource("1_87uf6")
+
+[node name="Map" type="Node2D" parent="." unique_id=734698365 instance=ExtResource("2_2a8rs")]
+unique_name_in_owner = true
+script = ExtResource("3_4j704")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=144061812 instance=ExtResource("4_kp23o")]
+unique_name_in_owner = true
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("5_5jirj")
+character = ExtResource("6_vaxfo")
+
+[node name="TouchControls" type="CanvasLayer" parent="." unique_id=564727493 instance=ExtResource("7_ftsea")]
+layer = 10
+script = ExtResource("8_otnwt")

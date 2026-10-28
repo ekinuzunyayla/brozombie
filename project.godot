@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BroZombie"
-run/main_scene="res://scenes/ui/platform_check.tscn"
+run/main_scene="res://scenes/game/game.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -86,6 +86,12 @@ pause={
 [internationalization]
 
 locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.tr.translation")
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="zombies"
 
 [physics]
 
