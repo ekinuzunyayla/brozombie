@@ -192,6 +192,7 @@ Teknik kural: reklam, satın alma, başarımlar ve bulut kaydı `Monetization`/`
 - **Renderer:** Mobile
 - **Görünüm:** 2D top-down, vektör/çizim stili (kalın kontur, düz renkler)
 - **Harita:** `TileMapLayer` + navigasyon. Kalabalık zombi için paylaşılan akış alanı (flow field) düşünülür
+- **Performans bütçesi:** iPhone 11'de 60 FPS, ekranda aynı anda ~150 zombi
 
 ### 6.2 Klasör Yapısı
 Güncel hedef yapı `CLAUDE.md` içindedir.
@@ -251,7 +252,7 @@ Yerel diskte şu klasörler bulunur:
 - [ ] Oyunun kesin adı 🔒
 - [ ] Silah slotu sayısı ve yakın dövüşün rolü 🔒 (v0.4'ten önce)
 - [ ] Mobil monetizasyon detayları 🔒 (ödüllü reklam noktaları, IAP paketleri)
-- [ ] Hedef en düşük mobil cihaz ve ekrandaki azami zombi sayısı bütçesi 🔒
+- [x] Performans bütçesi: iPhone 11'de 60 FPS, ekranda aynı anda ~150 zombi
 - [x] Görsel stil: 2D vektör/çizim (Brotato gibi)
 - [x] Godot sürümü: 4.7
 - [x] Run hedefi: 20 dalga ile kazanma + sonsuz mod

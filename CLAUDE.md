@@ -40,7 +40,7 @@ macOS'ta `timeout` komutu yok, onun yerine `--quit-after` kullan.
 - **Sistemler sinyalle konuşur.** Sistemler birbirini doğrudan çağırmaz, `EventBus` üzerinden sinyal yayınlar. Autoload'ları az tut: `Game` (ayarlar, dil, platform), `EventBus` ve run durumu. Oyun mantığını autoload'a yığma.
 - **Rastgelelik tek kaynaktan gelir.** Run başına bir tane seed'li `RandomNumberGenerator` kullan. `randi()` ve `randf()` global fonksiyonlarını kullanma.
 - **Kaydedilebilir durum.** `RunState` ve `Profile` düz veriye çevrilebilir olmalı (`to_dict()`/`from_dict()`). Node referansı veya sinyal bağlantısı taşımaz. Run, dalga arası molada kaydedilir. Uygulama arka plana geçince oyun duraklar.
-- **Mobil performans öncelikli.** Zombi, mermi, drop ve hasar yazısı için object pooling kullan. Her zombiye ayrı `NavigationAgent2D` verme. Paylaşılan akış alanı (flow field) ya da sınırlı yol bulma kullan. `_process` içinde node arama ve fizik sorgusu yapma. Performans bütçesi ROADMAP'te 🔒.
+- **Mobil performans öncelikli.** Zombi, mermi, drop ve hasar yazısı için object pooling kullan. Her zombiye ayrı `NavigationAgent2D` verme. Paylaşılan akış alanı (flow field) ya da sınırlı yol bulma kullan. `_process` içinde node arama ve fizik sorgusu yapma. Bütçe: iPhone 11'de 60 FPS, ekranda aynı anda ~150 zombi.
 - **Platform kodu arayüz arkasında.** Reklam, satın alma, başarımlar ve bulut kaydı `Monetization`/`Platform` arayüzlerinden geçer. Core bunları doğrudan çağırmaz. Editörde mock uygulama, PC'de no-op uygulama kullanılır.
 - **Güncel kapsam:** `docs/ROADMAP.md`'deki aktif kilometre taşı. Onun dışındaki işi istenmeden yapma. 🔒 işaretli karar kapılarında kod yazmadan önce kullanıcıya sor.
 

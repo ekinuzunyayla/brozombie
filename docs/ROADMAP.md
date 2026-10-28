@@ -23,16 +23,17 @@
 **Bitti (2026-10-28, iPhone 11'de doğrulandı):** Boş bir sahne PC'de ve mobil cihazda açılıyor, joystick hareket vektörü üretiyor, testler geçiyor.
 
 ## v0.1 Savunma çekirdeği
-- [ ] Stat + Modifier sistemi (`scripts/core/`) + testleri
+- [x] Stat + Modifier sistemi (`scripts/core/`) + testleri
 - [ ] Oyuncu hareketi, kamera takibi
 - [ ] Otomatik nişanlı 1 silah (tabanca), mermi pooling
 - [ ] 2 zombi tipi (yürüyen, koşucu) `.tres` olarak
 - [ ] Zombi hareketi (navigasyon / akış alanı)
-- [ ] 1 harita: ev + bahçe, zombi giriş noktaları
+- [ ] 1 harita: ev + bahçe, zombi giriş noktaları (placeholder renkli şekiller)
 - [ ] Sonsuz dalga, veriden ölçekleme
 - [ ] HUD: can, dalga, mermi
 - [ ] Ölüm → yeniden başlat
-- [ ] 🔒 Hedef cihaz ve zombi sayısı bütçesi (performans testi öncesi)
+- [x] 🔒 Performans bütçesi: iPhone 11'de 60 FPS, ekranda aynı anda ~150 zombi
+- [ ] Performans testi: iPhone 11'de 150 zombi ile 60 FPS
 
 **Test edilen soru:** Savunma eğlenceli mi?
 
