@@ -21,6 +21,8 @@ macOS'ta `timeout` komutu yok, onun yerine `--quit-after` kullan.
 - Ekran görüntüsü al (headless olmadan): `$GODOT --path . --write-movie <scratchpad>/f.png --quit-after 5`. Son kareyi oku.
 - Godot editörü açıksa Fennara MCP araçlarını tercih et: script diagnostics, `screenshot_scene`, oyun içi davranış için `runtime_session`/`runtime_script`.
 - Export: `$GODOT --headless --path . --export-debug "Android" build/android/BroZombie.apk`. Preset adları: `Android`, `iOS`, `macOS`, `Windows`. `build/` içinde `.gdignore` olmalı, yoksa Godot build çıktılarını tarar ve import dakikalarca sürer.
+- iPhone'a yükle (kullanıcının iPhone 11'i, imza takımı `J6M85854Q9`): önce `--export-debug "iOS" build/ios/BroZombie.ipa`, sonra `xcrun devicectl device install app --device A51740D9-B836-5702-B343-7C6B2B3F15B9 build/ios/BroZombie.ipa` ve `xcrun devicectl device process launch --terminate-existing --device A51740D9-B836-5702-B343-7C6B2B3F15B9 com.ekinuzunyayla.brozombie`. Telefon kilitliyse "device is locked" hatası verir, kullanıcıdan kilidi açmasını iste. "No provider was found" uyarısı zararsızdır. iOS simülatörü kullanılamıyor.
+- Mobil export için `rendering/textures/vram_compression/import_etc2_astc=true` gerekli. Kapalıysa export ayrıntı vermeden "configuration errors" ile düşer.
 - Kullanıcının Godot editörü projede açıkken `--import` takılabilir. Editör açıksa import'u editöre bırak, testler ve sahne çalıştırma etkilenmez.
 - `--import` bazen editör açık değilken de işini bitirdikten sonra kapanmıyor. Çıktıda `loading_editor_layout` için `DONE` görüldüyse import bitmiştir, süreci öldürmek güvenlidir.
 - Script hatası olsa bile Godot exit code 0 dönebilir. Çıktıda `SCRIPT ERROR`, `Parse Error` ve `ERROR:` ara.
