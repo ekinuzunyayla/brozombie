@@ -1,0 +1,13 @@
+keys,en,tr
+LANGUAGE_NAME,English,Türkçe
+BUTTON_SWITCH_LANGUAGE,Language: %s,Dil: %s
+ACTION_INTERACT,Use,Kullan
+PLATFORM_CHECK_TITLE,Platform Check,Platform Kontrolü
+PLATFORM_CHECK_MOVE,Move: %s,Hareket: %s
+PLATFORM_CHECK_INTERACT,Interact: %s,Etkileşim: %s
+PLATFORM_CHECK_TOUCHSCREEN,Touchscreen: %s,Dokunmatik ekran: %s
+STATE_ON,on,açık
+STATE_OFF,off,kapalı
+INFO_WINDOW,Window,Pencere
+INFO_VIEWPORT,Viewport,Görüntü alanı
+INFO_SAFE_AREA,Safe area,Güvenli alan

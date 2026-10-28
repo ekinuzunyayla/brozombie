@@ -25,6 +25,8 @@ macOS'ta `timeout` komutu yok, onun yerine `--quit-after` kullan.
 - `--import` bazen editör açık değilken de işini bitirdikten sonra kapanmıyor. Çıktıda `loading_editor_layout` için `DONE` görüldüyse import bitmiştir, süreci öldürmek güvenlidir.
 - Script hatası olsa bile Godot exit code 0 dönebilir. Çıktıda `SCRIPT ERROR`, `Parse Error` ve `ERROR:` ara.
 - Bir işi "bitti" saymadan önce en az import/parse kontrolünü çalıştır ve çıktısını göster.
+- Editör kapalıyken sahne veya project settings değişikliği: scratchpad'de `extends SceneTree` bir script yazıp `$GODOT --headless --path . -s <script>` ile çalıştır. Sahneyi `PackedScene.pack` + `ResourceSaver.save`, ayarları `ProjectSettings.set_setting` + `save()` ile Godot kaydetsin. Autoload'lar `_init` sırasında henüz yüklü değildir, işi ilk `_process` karesinde yap. Input map'teki klavye olaylarına `device = -1` ver.
+- Dokunmatik kontrolleri masaüstünde görmek için proje köküne geçici bir `override.cfg` koy (`[input_devices]` altında `pointing/emulate_touch_from_mouse=true`). İş bitince sil.
 - (v0.5'ten itibaren) Denge simülasyonu: `$GODOT --headless --path . -s res://tools/balance_sim.gd -- --runs=300`. Değişiklik öncesi ve sonrası aynı seed'lerle karşılaştır.
 
 ## Mimari ilkeler
@@ -45,7 +47,9 @@ macOS'ta `timeout` komutu yok, onun yerine `--quit-after` kullan.
 - Nişan otomatiktir. Oyuncu yalnızca hareket eder ve etkileşir. Fare veya sağ analogla nişan alma kodu yazma.
 - Hareket tek bir `MoveInput` soyutlamasından okunur. Klavye, gamepad ve dokunmatik sanal joystick aynı `Vector2`'yi üretir. Oyuncu kodu girdi kaynağını bilmez.
 - İnşa, tamir, satın alma ve kapı açma tek bir `interact` eylemiyle yapılır: oyuncu noktanın yanına gelir, etkileşimi basılı tutar. Dokunmatikte bunun için ekranda büyük bir buton olur.
-- Dokunmatikte joystick ve etkileşim butonu aynı anda kullanılır (iki parmak). Bu iki kontrol dışındaki UI tek dokunuşla çalışır.
+- Dokunmatik joystick Godot 4.7'nin yerleşik `VirtualJoystick` node'udur ve `move_*` eylemlerine doğrudan güç yazar (`scenes/ui/touch_controls.tscn`). `VirtualJoystick` adında kendi sınıfını tanımlama, yerleşik sınıfla çakışır.
+- Dokunmatikte joystick ve etkileşim butonu aynı anda kullanılır (iki parmak). Bu yüzden `TouchActionButton` (`scripts/input/touch_action_button.gd`) dokunmaları `InputEventScreenTouch` index'iyle izler. Bu iki kontrol dışındaki UI tek dokunuşla çalışır ve yalnızca fare olaylarını (`emulate_mouse_from_touch`) dinler.
+- UI testleri: GUT'un kendi paneli 128. katmanda girdiyi yakalar. Test edilen node'u `layer = 200` olan bir `CanvasLayer` içine koy (`tests/unit/test_touch_controls.gd`).
 - Hover'a bağlı özellik olmaz. Dokunma alanı en az ~120 px (1080p'de). Tam ekran UI kökleri `SafeArea` içine konur.
 - Tüm menüler gamepad ile de gezilebilir olmalı (focus komşuları ayarlanır).
 

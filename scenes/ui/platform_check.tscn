@@ -1,0 +1,62 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/platform_check.gd" id="1_648u4"]
+[ext_resource type="Script" path="res://scripts/ui/safe_area.gd" id="2_ik2f3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/touch_controls.tscn" id="3_m6mcv"]
+[ext_resource type="Script" path="res://scripts/input/touch_controls.gd" id="4_ryets"]
+
+[node name="PlatformCheck" type="Control" unique_id=711887134]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_648u4")
+
+[node name="Background" type="ColorRect" parent="." unique_id=676404227]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.12, 0.13, 0.12, 1)
+
+[node name="SafeArea" type="MarginContainer" parent="." unique_id=521564749]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_ik2f3")
+
+[node name="Center" type="CenterContainer" parent="SafeArea" unique_id=477432732]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="SafeArea/Center" unique_id=1923564043]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TitleLabel" type="Label" parent="SafeArea/Center/Content" unique_id=1536321282]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="SafeArea/Center/Content" unique_id=1108290335]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="InputLabel" type="Label" parent="SafeArea/Center/Content" unique_id=1427636332]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="LanguageButton" type="Button" parent="SafeArea/Center/Content" unique_id=1135011621]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+
+[node name="TouchControls" type="CanvasLayer" parent="." unique_id=564727493 instance=ExtResource("3_m6mcv")]
+layer = 10
+script = ExtResource("4_ryets")

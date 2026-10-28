@@ -16,3 +16,6 @@ localization/*.translation
 /build/
 
 .DS_Store
+
+# Geçici ayar dosyası (dokunmatik taklidi vb.)
+override.cfg

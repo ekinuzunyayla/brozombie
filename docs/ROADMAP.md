@@ -11,13 +11,14 @@
 - [x] `git init`, `.gitignore` kontrolü
 - [x] GUT eklentisini `addons/gut/` altına kur, `tests/unit/` altında örnek bir test geçsin
 - [x] Klasör iskeleti (`CLAUDE.md` > Klasör yapısı)
-- [ ] `localization/strings.csv` (`keys,tr,en`) + project settings'te çeviri kaydı, varsayılan dil
-- [ ] Input map: `move_left/right/up/down`, `interact`, `pause` (klavye + gamepad)
-- [ ] Sanal joystick + etkileşim butonu (yalnızca dokunmatik cihazda görünür)
-- [ ] `MoveInput` soyutlaması: klavye, gamepad ve joystick aynı vektörü üretir
-- [ ] `Monetization` ve `Platform` arayüzleri + mock/no-op uygulamaları
-- [ ] Yatay ekran, `SafeArea`, pencere boyutu/stretch ayarları
-- [ ] `build/.gdignore`, export preset'leri (`Android`, `iOS`, `macOS`, `Windows`)
+- [x] `localization/strings.csv` (`keys,tr,en`) + project settings'te çeviri kaydı, varsayılan dil
+- [x] Input map: `move_left/right/up/down`, `interact`, `pause` (klavye + gamepad)
+- [x] Sanal joystick (Godot 4.7 yerleşik `VirtualJoystick`) + etkileşim butonu (yalnızca dokunmatik cihazda görünür)
+- [x] `MoveInput` soyutlaması: klavye, gamepad ve joystick aynı vektörü üretir
+- [x] `Monetization` ve `Platform` arayüzleri + mock/no-op uygulamaları
+- [x] Yatay ekran, `SafeArea`, pencere boyutu/stretch ayarları
+- [x] `build/.gdignore`, export preset'leri (`Android`, `iOS`, `macOS`, `Windows`)
+- [ ] Android cihazda `scenes/ui/platform_check.tscn` testi: joystick hareket vektörü üretiyor, joystick ve butona aynı anda basılabiliyor
 
 **Bitti:** Boş bir sahne PC'de ve bir Android cihazda açılıyor, joystick hareket vektörü üretiyor, testler geçiyor.
 
