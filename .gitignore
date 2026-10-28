@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Fennara MCP yerel çalışma dosyaları
+.fennara/
+
+# Editör içi terminal eklentisi (kişisel araç, 100MB+ binary)
+/addons/godotty/
+
+# Kişisel Claude talimatları
+CLAUDE.local.md
+
+# Godot import ürünleri ve export çıktıları
+localization/*.translation
+/build/
+
+.DS_Store
