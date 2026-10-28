@@ -1,6 +1,6 @@
 # BroZombie — Yol Haritası
 
-> **Aktif kilometre taşı: v0.0 Kurulum**
+> **Aktif kilometre taşı: v0.1 Savunma çekirdeği**
 >
 > Her aşamanın sonunda oyun oynanabilir olmalıdır. Aktif aşamanın dışındaki işi istenmeden yapma. Biten görevin kutucuğunu işaretle. 🔒 işaretli maddelerde kod yazmadan önce kullanıcıya sor.
 > İlk sürümlerde görseller placeholder olabilir (`Polygon2D`, `ColorRect`, `Label`).
@@ -18,9 +18,9 @@
 - [x] `Monetization` ve `Platform` arayüzleri + mock/no-op uygulamaları
 - [x] Yatay ekran, `SafeArea`, pencere boyutu/stretch ayarları
 - [x] `build/.gdignore`, export preset'leri (`Android`, `iOS`, `macOS`, `Windows`)
-- [ ] Android cihazda `scenes/ui/platform_check.tscn` testi: joystick hareket vektörü üretiyor, joystick ve butona aynı anda basılabiliyor
+- [x] Cihazda (iPhone 11) `scenes/ui/platform_check.tscn` testi: joystick hareket vektörü üretiyor, joystick ve butona aynı anda basılabiliyor
 
-**Bitti:** Boş bir sahne PC'de ve bir Android cihazda açılıyor, joystick hareket vektörü üretiyor, testler geçiyor.
+**Bitti (2026-10-28, iPhone 11'de doğrulandı):** Boş bir sahne PC'de ve mobil cihazda açılıyor, joystick hareket vektörü üretiyor, testler geçiyor.
 
 ## v0.1 Savunma çekirdeği
 - [ ] Stat + Modifier sistemi (`scripts/core/`) + testleri
