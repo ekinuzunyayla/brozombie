@@ -10,6 +10,7 @@ var _flow := FlowFieldSystem.new()
 @onready var _bullet_pool: NodePool = %BulletPool
 @onready var _zombie_pool: NodePool = %ZombiePool
 @onready var _spawner: DebugZombieSpawner = %ZombieSpawner
+@onready var _hud: Hud = %Hud
 
 
 func _ready() -> void:
@@ -32,6 +33,9 @@ func _ready() -> void:
 	_spawner.target = _player
 	_spawner.target_health = _player.health
 	_spawner.flow = _flow
+
+	_hud.bind(_player)
+	_hud.set_wave(1) # Dalga sistemi gelene kadar sabit.
 
 
 func _fit_camera_to_map() -> void:

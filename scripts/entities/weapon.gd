@@ -30,6 +30,13 @@ func is_reloading() -> bool:
 	return _reload_left > 0.0
 
 
+## Dolumun ne kadarı bitti (0..1). Dolum yoksa 1.
+func get_reload_progress() -> float:
+	if not is_reloading():
+		return 1.0
+	return clampf(1.0 - _reload_left / maxf(0.01, get_reload_time()), 0.0, 1.0)
+
+
 func get_damage() -> float:
 	return owner_stats.apply(StatIds.DAMAGE, data.damage)
 

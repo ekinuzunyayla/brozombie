@@ -11,3 +11,4 @@ STATE_OFF,off,kapalı
 INFO_WINDOW,Window,Pencere
 INFO_VIEWPORT,Viewport,Görüntü alanı
 INFO_SAFE_AREA,Safe area,Güvenli alan
+HUD_WAVE,Wave %d,Dalga %d

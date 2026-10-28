@@ -30,7 +30,7 @@
 - [x] Zombi hareketi (akış alanı, `scripts/core/flow_field.gd`)
 - [ ] 1 harita: ev + bahçe, zombi giriş noktaları (placeholder renkli şekiller)
 - [ ] Sonsuz dalga, veriden ölçekleme
-- [ ] HUD: can, dalga, mermi
+- [x] HUD: can, dalga, mermi
 - [x] Ölüm → yeniden başlat (geçici: sahne yeniden yüklenir)
 - [x] 🔒 Performans bütçesi: iPhone 11'de 60 FPS, ekranda aynı anda ~150 zombi
 - [ ] Performans testi: iPhone 11'de 150 zombi ile 60 FPS
